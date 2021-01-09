@@ -1,0 +1,19 @@
+Title: 'EFA for Resources - Social Capital';
+
+Data:
+      File is museEFA_SocCap.csv;
+
+Variable: Names are SC1-SC19;
+          Usevariables= SC1-SC9 SC11-SC14 SC18-SC19;
+          Categorical = SC1-SC9 SC11-SC14 SC18-SC19;
+          Missing=.;
+	
+Analysis: Type is EFA 4 5;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;
+
+

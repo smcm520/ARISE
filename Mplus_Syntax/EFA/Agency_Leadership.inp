@@ -1,0 +1,26 @@
+Title: 'EFA for Resources - Leadership';
+
+Data:
+      File is museEFA_Lead.csv;
+
+Variable: Names are L02_1_3 L02_1_4 L02_1_5 L02_1_6
+	L02_1_99 L02_1_88 L02_1_77 L02_1_66 L03_1
+	L04_1 L05_1 L06_1 L07_1_rev L08_1_rev L09_1
+	L10_1 L11_1 L12_1 L13_1_rev L14_1 L15_1 L16_1
+	L17_1_rev L18_1 L19_1 L20_1 L21_1;
+   
+          Usevariables= L13_1_rev L14_1 L15_1
+	L17_1_rev L18_1 L19_1 L21_1;
+	
+	Categorical = L13_1_rev L14_1 L15_1
+	L17_1_rev L18_1 L19_1 L21_1;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 1 2;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

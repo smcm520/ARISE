@@ -1,0 +1,24 @@
+Title: 'EFA for Resources - Financial and Productive Assets';
+
+Data:
+      File is museEFA_FPA.csv;
+
+Variable: Names are F02 F01 F03 F04 F05 F06_rev 
+	F07 F08 F10_rev F11_rev F12_rev F13_rev
+	F14_rev F15 F16 F17_rev F18_rev F19_rev F20_rev;
+          Usevariables= F02 F01 F03 F05 F06_rev 
+	F07 F08 F10_rev F11_rev F12_rev F13_rev
+	F14_rev F16 F17_rev F20_rev;
+	Categorical = F02 F01 F03 F05 F06_rev 
+	F07 F08 F10_rev F11_rev F12_rev F13_rev
+	F14_rev F16 F17_rev F20_rev;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 5 5;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

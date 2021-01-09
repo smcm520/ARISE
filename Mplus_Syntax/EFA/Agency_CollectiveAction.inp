@@ -1,0 +1,29 @@
+Title: 'EFA for Resources - Collective Action';
+
+Data:
+      File is museEFA_CA.csv;
+
+Variable: Names are CA01_1 CA01a_1 CA02_1 CA02a_1 CA03_1
+	CA03a_1 CA04_1 CA04a_1 CA05_1 CA05a_1 CA06_1
+	CA06a_1 CA07_1 CA07a_1 CA08_1 CA08a_1 CA09_1
+	CA09a_1 CA10_1 CA10a_1 CA11_1 CA11a_1 CA12_1
+	CA14_1 CA15_1 CA16_1 CA17_1 CA18_1 CA19_1 CA21_1
+	CA22_1 CA23_1 CA24_1;
+   
+          Usevariables= CA12_1
+	CA14_1 CA16_1 CA17_1 CA18_1 CA19_1
+	CA22_1 CA23_1 CA24_1;
+	
+	Categorical = CA12_1
+	CA14_1 CA16_1 CA17_1 CA18_1 CA19_1
+	CA22_1 CA23_1 CA24_1;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 3 3;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

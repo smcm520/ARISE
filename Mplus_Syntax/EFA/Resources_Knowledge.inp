@@ -1,0 +1,17 @@
+Title: 'EFA for Resources - Knowledge';
+
+Data:
+      File is museEFA_Knowledge.csv;
+
+Variable: Names are K1-K10 K12-K21;
+          Usevariables= K1-K3 K6-K7 K9-K10 K12 K14-K16 K18-K21;
+          Categorical = K1-K3 K6-K7 K9-K10 K12 K14-K16 K18-K21;
+          Missing=.;
+	
+Analysis: Type is EFA 5 5;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

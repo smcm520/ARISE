@@ -1,0 +1,17 @@
+Title: 'EFA for Resources - Health';
+
+Data:
+      File is museEFA_Health.csv;
+
+Variable: Names are H1-H20 H22-H24;
+          Categorical = H1-H20 H22-H24;
+          Usevariables= H1-H6 H8-H10 H12 H15-H20 H22-H24;
+          Missing=.;
+	
+Analysis: Type is EFA 6 6;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

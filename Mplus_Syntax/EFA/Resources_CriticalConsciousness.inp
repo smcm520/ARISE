@@ -1,0 +1,29 @@
+Title: 'EFA for Resources - Critical Consciousness';
+
+Data:
+      File is museEFA_CC.csv;
+
+Variable: Names are CC01 CC02 CC03 CC04 CC05 CC06 
+	CC07 CC08 CC09 CC10 CC11 CC12 CC13_rev
+	CC14 CC15 CC16 CC17 CC18_rev CC19_rev 
+	CC20 CC21 CC23 CC24_rev;
+          
+          Usevariables= CC01 CC02 CC03 CC04 CC05 CC06 
+	CC08 CC10 CC11 CC13_rev
+	CC14 CC15 CC16 CC17 CC18_rev CC19_rev 
+	CC24_rev;
+	
+	Categorical = CC01 CC02 CC03 CC04 CC05 CC06 
+	CC08 CC10 CC11 CC13_rev
+	CC14 CC15 CC16 CC17 CC18_rev CC19_rev 
+	CC24_rev;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 5 5;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

@@ -1,0 +1,34 @@
+Title: 'EFA for Resources - DM';
+
+Data:
+      File is museEFA_DM.csv;
+
+Variable: Names are DM06_1 DM05_1 DM04_1 DM03_1 DM02_1
+	DM01_1 DM18_1 DM17_1 DM16_1 DM15_1 DM14_1 DM13_1
+	DM12_1 DM11_1 DM10_1 DM09_1 DM08_1 DM23_1 DM24_1
+	DM25_1 DM26_1 DM27_1 DM28_1 DM29_1 DM30_1 DM31_1
+	DM35_1 DM36_1 DM37_1 DM38_1 DM39_1 DM40_1 DM41_1
+	DM42_1 DM43_1 DM44_1 DM45_1 DM46_1 DM47_1 DM48_1
+	DM49_1 DM51_1 DM52_1 DM53_1;
+   
+          Usevariables= DM23_1 DM24_1
+	DM25_1 DM27_1 DM28_1 DM29_1 DM30_1 DM31_1
+	DM35_1 DM36_1 DM37_1 DM38_1
+	DM42_1 DM43_1 DM44_1 DM45_1 DM46_1
+	DM51_1 DM52_1 DM53_1;
+	
+	Categorical = DM23_1 DM24_1
+	DM25_1 DM27_1 DM28_1 DM29_1 DM30_1 DM31_1
+	DM35_1 DM36_1 DM37_1 DM38_1
+	DM42_1 DM43_1 DM44_1 DM45_1 DM46_1
+	DM51_1 DM52_1 DM53_1;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 6 6;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

@@ -1,0 +1,29 @@
+Title: 'EFA for Resources - Bodiliy Integrity';
+
+Data:
+      File is museEFA_BI.csv;
+
+Variable: Names are BI01 BI02 BI03 BI04 BI05_rev
+	BI06 BI07_rev BI08_rev BI09_rev BI10_rev
+	BI11_rev BI12_rev BI13_rev BI14 BI15 BI16
+	BI17 BI18_rev BI19_rev BI20_rev;
+          
+          Usevariables= BI01 BI02 BI04 BI05_rev
+	BI07_rev BI08_rev BI09_rev BI10_rev
+	BI11_rev BI12_rev BI13_rev BI14 BI15 BI16
+	BI17 BI18_rev BI19_rev BI20_rev;
+	
+	Categorical = BI01 BI02 BI04 BI05_rev
+	BI07_rev BI08_rev BI09_rev BI10_rev
+	BI11_rev BI12_rev BI13_rev BI14 BI15 BI16
+	BI17 BI18_rev BI19_rev BI20_rev;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 4 4;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

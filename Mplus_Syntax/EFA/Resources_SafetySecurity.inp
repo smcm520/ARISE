@@ -1,0 +1,33 @@
+Title: 'EFA for Resources - Safety and Security';
+
+Data:
+      File is museEFA_SS.csv;
+
+Variable: Names are S01 S02 S03 S08 S09 S10 S11
+	S12 S13 S14 S15 S04 S05 S06 S07 S16 S17
+	S18 S19 S20 S21 S22 S23 S24 S25 S26 S27
+	S28 S29 S30 S31 S32 S33 S34_rev S35_rev
+	S36_rev S37;
+          
+          Usevariables= S01 S08 S10 S11
+	S13 S14 S15 S04 S05 S06 S07 S21 S22 S23
+	S24 S26 S27 S29 S31 S33 
+	S34_rev S35_rev
+	S36_rev;
+	
+	Categorical = S01 S08 S10 S11
+	S13 S14 S15 S04 S05 S06 S07 S21 S22 S23
+	S24 S26 S27 S29 S31 S33 
+	S34_rev S35_rev
+	S36_rev;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 6 6;
+          Estimator = WLSMV;
+          Rotation=quartimin;
+          ITERATIONS = 10000;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

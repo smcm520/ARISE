@@ -1,0 +1,36 @@
+Title: 'EFA for Resources - Norms';
+
+Data:
+      File is museEFA_Norms.csv;
+
+Variable: Names are N01 N03 N05 N07 N09 N11
+	N13 N14_rev N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev N23_rev N25_rev
+	N26 N27 N28_rev N29_rev N30_rev N31_rev
+	N32 N33 N34_rev N35_rev N36_rev 
+	N37_rev N38 N39_rev N40 N41_rev N42_1;
+   
+          Usevariables= N01 N03 N05 N07 N09 N11
+	N13 N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev
+	N29_rev N30_rev
+	N32 N34_rev N35_rev N36_rev 
+	N37_rev N39_rev N40 N41_rev N42_1;
+	
+	Categorical = N01 N03 N05 N07 N09 N11
+	N13 N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev
+	N29_rev N30_rev
+	N32 N34_rev N35_rev N36_rev 
+	N37_rev N39_rev N40 N41_rev N42_1;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 8 8;
+          Estimator = WLSMV;
+          ITERATIONS = 5000;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;

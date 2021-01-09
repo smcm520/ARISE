@@ -1,0 +1,39 @@
+Title: 'EFA for Resources - Relations';
+
+Data:
+      File is museEFA_Relations.csv;
+
+Variable: Names are R01_rev R02_rev R03_rev
+	R04_rev R05_rev R06_rev R07_rev
+	R08_rev R09_rev R10_rev R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18 R19 R20_1_rev R21 R22_rev
+	R23 R24 R25 R26 R27_rev R28_rev
+	R29_rev R30 R31;
+   
+          Usevariables=
+	R04_rev R07_rev
+	R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18 R22_rev
+	R23 R24 R25 R26
+	R30 R31;
+	
+	Categorical =
+	R04_rev R07_rev
+	R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18 R22_rev
+	R23 R24 R25 R26
+	R30 R31;
+          
+          Missing=.;
+	
+Analysis: Type is EFA 5 5;
+          Estimator = WLSMV;
+          ITERATIONS = 5000;
+          Rotation=quartimin;
+
+Plot: Type = PLOT2;
+
+Output: Modindices;
