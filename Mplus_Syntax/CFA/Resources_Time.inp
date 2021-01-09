@@ -1,0 +1,18 @@
+Title: 'CFA for Resources - Time';
+
+Data:
+      File is museCFA_Time.csv;
+
+Variable: Names are T1-T11;
+          Categorical = T2-T3 T5-T8;
+          Usevariables= T2-T3 T5-T8;
+          Missing=.;
+	
+Analysis: Type is general;
+                    
+Model:
+           f1 BY T2 T3 T5;
+           f2 BY T6-T8;
+           T8 WITH T6;
+
+Output: Modindices (ALL) Standardized sampstat;

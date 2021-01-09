@@ -1,0 +1,22 @@
+Title: 'CFA for Resources - Social Capital';
+
+Data:
+      File is museCFA_SC.csv;
+
+Variable: Names are SC1-SC19;
+          Usevariables= SC1 SC2 SC4 SC6 SC8 SC11 SC13-SC14;
+          Categorical = SC1 SC2 SC4 SC6 SC8 SC11 SC13-SC14;
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY SC1 SC4 SC6 SC8;
+           f2 BY SC2 SC11 SC13 SC14;
+          
+
+Output: Modindices Standardized sampstat;
+
+savedata: file is newdata.csv;
+

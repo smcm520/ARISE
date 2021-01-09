@@ -1,0 +1,39 @@
+Title: 'CFA for Resources - Relations';
+
+Data:
+      File is museCFA_Relations.csv;
+
+Variable: Names are R01_rev R02_rev R03_rev
+	R04_rev R05_rev R06_rev R07_rev
+	R08_rev R09_rev R10_rev R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18 R19 R20_1_rev R21 R22_rev
+	R23 R24 R25 R26 R27_rev R28_rev
+	R29_rev R30 R31;
+   
+          Usevariables=
+	R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18
+	R24 R25 R26;
+	
+	Categorical =
+	R11_rev
+	R12_rev R13_rev R14_rev R15 R16
+	R17 R18
+	R24 R25 R26;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+          
+Model:
+           f1 BY R11_rev* R12_rev R13_rev R14_rev;
+           f2 BY R15* R16 R17 R18;
+           f3 BY R24* R25 R26;
+           f1@1 f2@1 f3@1;
+           
+           
+
+Output: Modindices (ALL) Standardized sampstat;

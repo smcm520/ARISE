@@ -1,0 +1,30 @@
+Title: 'CFA for Resources - Financial and Productive Assets';
+
+Data:
+      File is museCFA_FPA.csv;
+
+Variable: Names are F02 F01 F03 F04 F05 F06_rev 
+	F07 F08 F10_rev F11_rev F12_rev F13_rev
+	F14_rev F15 F16 F17_rev F18_rev F19_rev F20_rev;
+          
+          Usevariables= F02 F01 F03 F05
+	F07 F08 F12_rev F13_rev;
+	
+	Categorical = F02 F01 F03 F05 
+	F07 F08 F12_rev F13_rev;
+          
+          Missing=.;
+	
+	
+Analysis: Type is general;
+                    
+Model:
+           f1 BY F02* F01 F03;
+           f2 BY F05* F07 F08;
+           f3 BY F12_rev* F13_rev;
+           f1@1 f2@1 f3@1;
+           F12_rev WITH F02;
+           F08 WITH F03;
+           F05 WITH F03;
+
+Output: Modindices (ALL) Standardized sampstat;

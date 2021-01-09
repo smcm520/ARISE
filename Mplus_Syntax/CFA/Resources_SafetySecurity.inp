@@ -1,0 +1,35 @@
+Title: 'CFA for Resources - Safety and Security';
+
+Data:
+      File is museCFA_SS.csv;
+
+Variable: Names are S01 S02 S03 S08 S09 S10 S11
+	S12 S13 S14 S15 S04 S05 S06 S07 S16 S17
+	S18 S19 S20 S21 S22 S23 S24 S25 S26 S27
+	S28 S29 S30 S31 S32 S33 S34_rev S35_rev
+	S36_rev S37;
+          
+          Usevariables= S01 S08 S10 S11
+	S13 S14 S04 S05 S06 S07 S21 S22 S23
+	S24 S27 S29 S31 S33;
+	
+	Categorical = S01 S08 S10 S11
+	S13 S14 S04 S05 S06 S07 S21 S22 S23
+	S24 S27 S29 S31 S33;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY S01 S08 S10;
+           f2 BY S11 S13 S14;
+           f3 BY S04 S05 S06 S07;
+           f4 BY S24 S27 S29 S31 S33 ;
+           f5 BY S21 S22 S23;
+           S11 WITH S10;
+           S07 WITH S06;
+
+
+Output: Modindices Standardized sampstat;

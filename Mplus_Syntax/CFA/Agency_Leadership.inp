@@ -1,0 +1,29 @@
+Title: 'CFA for Resources - Leadership';
+
+Data:
+      File is museCFA_Leadership.csv;
+
+Variable: Names are L02_1_3 L02_1_4 L02_1_5 L02_1_6
+	L02_1_99 L02_1_88 L02_1_77 L02_1_66 L03_1
+	L04_1 L05_1 L06_1 L07_1_rev L08_1_rev L09_1
+	L10_1 L11_1 L12_1 L13_1_rev L14_1 L15_1 L16_1
+	L17_1_rev L18_1 L19_1 L20_1 L21_1;
+   
+          Usevariables= L13_1_rev L14_1 L15_1
+	L17_1_rev L18_1 L19_1 L21_1;
+	
+	Categorical = L13_1_rev L14_1 L15_1
+	L17_1_rev L18_1 L19_1 L21_1;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY L13_1_rev* L14_1 L15_1;
+           f2 BY L17_1_rev* L18_1 L19_1 L21_1;
+           f1@1 f2@1;
+
+
+Output: Modindices Standardized sampstat;

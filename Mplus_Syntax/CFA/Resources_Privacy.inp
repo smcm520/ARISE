@@ -1,0 +1,22 @@
+Title: 'CFA for Resources - Privacy';
+
+Data:
+      File is museCFA_Privacy.csv;
+
+Variable: Names are P1-P12;
+          Categorical = P1-P5;
+          Usevariables= P1-P5;
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY P1* P2 P3 P4 P5;
+           f1@1;
+           P4 WITH P5;
+           P5 WITH P3;
+           P3 WITH P1;
+
+
+Output: Modindices (ALL) Standardized sampstat;

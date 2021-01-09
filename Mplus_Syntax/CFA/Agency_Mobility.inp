@@ -1,0 +1,25 @@
+Title: 'CFA for Resources - Freedom of Movement';
+
+Data:
+      File is museCFA_Mobility.csv;
+
+Variable: Names are M01_1 M02_1 M03_1 M04_1 M05_1 M06_1
+	M07_1 M08_1 M09_1 M10_1 M11_1 M12_1 M13_1
+	M14_1 M15_1 M16_1 M17_1 M18_1 M19_1 M20_1
+	M21_1 M22_1;
+   
+          Usevariables= M01_1 M02_1 M03_1 M05_1 M06_1;
+	
+	Categorical = M01_1 M02_1 M03_1 M05_1 M06_1;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY M01_1 M02_1 M03_1;
+           f2 BY M05_1 M06_1;
+
+
+Output: Modindices Standardized sampstat;

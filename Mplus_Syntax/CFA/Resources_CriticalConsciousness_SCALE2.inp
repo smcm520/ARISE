@@ -1,0 +1,23 @@
+Title: 'CFA for Resources - Critical Consciousness';
+
+Data:
+      File is museCFA_CC.csv;
+
+Variable: Names are CC01 CC02 CC03 CC04 CC05 CC06 
+	CC07 CC08 CC09 CC10 CC11 CC12 CC13_rev
+	CC14 CC15 CC16 CC17 CC18_rev CC19_rev 
+	CC20 CC21 CC23 CC24_rev;
+          
+          Usevariables= CC08 CC10 CC11 CC15;
+	
+	Categorical = CC08 CC10 CC11 CC15;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+                    
+Model:
+           f1 BY CC08 CC10 CC11 CC15;
+           CC11 WITH CC08;
+
+Output: Modindices (ALL) Standardized sampstat;

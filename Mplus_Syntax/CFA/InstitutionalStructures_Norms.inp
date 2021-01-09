@@ -1,0 +1,45 @@
+Title: 'CFA for Resources - Norms';
+
+Data:
+      File is museCFA_Norms.csv;
+
+Variable: Names are N01 N03 N05 N07 N09 N11
+	N13 N14_rev N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev N23_rev N25_rev
+	N26 N27 N28_rev N29_rev N30_rev N31_rev
+	N32 N33 N34_rev N35_rev N36_rev 
+	N37_rev N38 N39_rev N40 N41_rev N42_1;
+   
+          Usevariables= N01 N03 N05 N07 N09 N11
+	N13 N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev
+	N29_rev N30_rev
+	N34_rev N35_rev N36_rev 
+	N37_rev;
+	
+	Categorical = N01 N03 N05 N07 N09 N11
+	N13 N15 N16 N17_rev N18_rev
+	N19 N20 N21 N22_rev
+	N29_rev N30_rev
+	N34_rev N35_rev N36_rev 
+	N37_rev;
+          
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+             f1 BY N01* N03 N05 N07 N09 N11;
+             f2 BY N13* N15 N16;
+             f3 BY N19* N20 N21;
+             f4 BY N17_rev* N18_rev N22_rev;
+             f5 BY N34_rev* N35_rev N36_rev N37_rev;
+             f6 BY N29_rev* N30_rev;
+             f1@1 f2@1 f3@1 f4@1 f5@1 f6@1;
+             N20 WITH N19;
+             N37_rev WITH N36_rev;
+             N15 WITH N13;
+
+
+Output: Modindices Standardized sampstat;

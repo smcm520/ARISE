@@ -1,0 +1,22 @@
+Title: 'CFA for Resources - Health';
+
+Data:
+      File is museCFA_Health.csv;
+
+Variable: Names are H1-H20 H22-H24;
+          Categorical = H1-H20;
+          Usevariables= H1-H6 H8-H10 H12 H15-H20;
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY H1-H3;
+           f2 BY H4-H6;
+           f3 BY H8-H10;
+           f4 BY H12 H15-H16;
+           f5 BY H17-H20;
+
+
+Output: Modindices (ALL) Standardized sampstat;

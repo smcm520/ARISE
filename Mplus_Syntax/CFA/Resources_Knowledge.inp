@@ -1,0 +1,23 @@
+Title: 'CFA for Resources - Knowledge';
+
+Data:
+      File is museCFA_Knowledge.csv;
+
+Variable: Names are K1-K10 K12-K21;
+          Usevariables= K1-K3 K6 K7 K9-K10 K14-K16;
+          Categorical = K1-K3 K6 K7 K9-K10 K14-K16;
+          Missing=.;
+	
+Analysis: Type is general;
+          Estimator = WLSMV;
+                    
+Model:
+           f1 BY K2 K3 K7;
+           f2 BY K9 K10;
+           f3 BY K14 K15 K16;
+           f4 BY K1 K6;
+           K1 WITH K2;
+           K7 WITH K6;
+           K10 WITH K3;
+
+Output: Modindices (ALL) Standardized sampstat;
